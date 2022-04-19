@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello World</title>
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  <script language="javascript" type="text/javascript" src="./abi.js"></script>
+  <script>
+    window.addEventListener('load', async () => {
+
+var contract;
+const contractAddress = "0x04Fe09EfD0fA7572d04F6dC031116FD0A5251B25";
+
+const contractMessage = async (id) => {
+  contract = new web3.eth.Contract(abi, contractAddress);
+  //await contract.methods.setMessage(id).push();
+  let message = await contract.methods.getMessage().call();
+  return message;
+}
+
+// Modern dapp browsers...
+if (window.ethereum) {
+  window.web3 = new Web3(ethereum);
+  try {
+    // Request account access if needed
+    await ethereum.enable();
+    var id = window.prompt("Enter SSN or EIN: ");
+    var message = await contractMessage(id);
+    var elm = document.getElementById("message");
+    //elm.innerHTML = message
+    elm.innerHTML = id;
+  } catch (error) {
+    // User denied account access...
+  }
+}
+// Non-dapp browsers...
+else {
+  console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+}
+});
+  </script>
+</head>
+<body>
+  <div id="message"></div>
+</body>
+</html>
