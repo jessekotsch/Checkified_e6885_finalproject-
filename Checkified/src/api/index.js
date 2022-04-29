@@ -1,4 +1,4 @@
-import contract from '../contract';
+import {contract, verifyContract} from '../contract';
 
 import store from '../store'
 
@@ -25,5 +25,9 @@ export default {
         }
 
         return response;
+    },
+
+    async candidateHandler() {
+        return await verifyContract.Instance.methods.storeCandidateInfo(verifyContract.verifyAddress).call();
     }
 }

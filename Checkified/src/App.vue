@@ -1,9 +1,13 @@
 <template>
-  <HelloWorld />
+  <div>
+    <HelloWorld/>
+    <Verification/>
+  </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Verification from "./components/Verification.vue";
 
 import { mapGetters } from "vuex";
 
@@ -11,6 +15,7 @@ export default {
   name: "App",
   components: {
     HelloWorld,
+    Verification 
   },
   computed: {
     ...mapGetters(["usingAle"]),
