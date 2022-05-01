@@ -1,6 +1,7 @@
 import Mcp from "./mcp";
 
 const abi = require("./abi.json");
+const abi_verification = require("./abi_verification.json");
 
 const McpFunc = new Mcp();
 
@@ -15,6 +16,11 @@ const Instance = new McpFunc.Contract(
     tokenAddress
 );
 
+const verifyInstance = new McpFunc.Contract(
+    abi_verification,
+    verifyAddress
+);
+
 const Contract = {
     tokenAddress,
     Instance,
@@ -22,7 +28,7 @@ const Contract = {
 };
 
 const verifyContract = {
-    Instance,
+    verifyInstance,
     verifyAddress,
 };
 

@@ -28,6 +28,7 @@ export default {
     },
 
     async candidateHandler() {
-        return await verifyContract.Instance.methods.storeCandidateInfo(verifyContract.verifyAddress).call();
+        //return await verifyContract.verifyInstance.methods.candidateHandler(snn, firstName, lastName, homeAddress, uni).call()
+        return await verifyContract.verifyInstance.methods.candidateHandler(123456789, "firstName", "lastName", "homeAddress", "uni").call()
     }
 }
