@@ -29,12 +29,12 @@ const abi_verification = require("./abi_verification.json");
 
 const McpFunc = new Mcp();
 
-McpFunc.Contract.setProvider("http://18.182.45.18:8765");
+McpFunc.Contract.setProvider("http://13.212.177.203:8765");
 
 const tokenAddress = "0x56f12EC4980d7bbD0470BEb3E713e61a33a1141C";
 const coreAddress = "0x56f12EC4980d7bbD0470BEb3E713e61a33a1141C";
 
-const verifyAddress = "0x789954166f927359f8788201794c8F51A0Ea1E54"; // VERIFICATION CONTRACT
+const verifyAddress = "0x225949Ff742Ea5E73f05E1F834e8e625FCa73061"; // VERIFICATION CONTRACT
 
 const Instance = new McpFunc.Contract(abi, tokenAddress);
 

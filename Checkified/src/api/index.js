@@ -26,11 +26,12 @@ export default {
 
   //     return response;
   // }
-  async candidateHandler() {
-    console.log("heree");
-    await VerifyContract.verifyInstance.methods
+  async candidateHandler(ssn, firstName, lastName, homeAddress, uni) {
+    console.log("heree", ssn, firstName, lastName, homeAddress, uni);
+    const res = await VerifyContract.verifyInstance.methods
       .candidateHandler("1234", "monirul", "islam", "1234STREET", "1234UNI")
       .call();
+    console.log("candidateHandler", res);
     await VerifyContract.verifyInstance.methods
       .institutionHandler(
         "Columbia University",
@@ -43,6 +44,6 @@ export default {
     const result = await VerifyContract.verifyInstance.methods
       .employerHandler("1234")
       .call();
-    console.log(result);
+    console.log(result['ssn']);
   },
 };
