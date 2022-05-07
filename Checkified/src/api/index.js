@@ -1,8 +1,8 @@
 import VerifyContract from "../contract";
 
-// import store from '../store'
+import store from '../store'
 
-// import Big from 'bignumber.js'
+import Big from 'bignumber.js'
 
 export default {
   // async getName() {
@@ -28,11 +28,14 @@ export default {
   // }
   async candidateHandler(ssn, firstName, lastName, homeAddress, uni) {
     console.log("heree", ssn, firstName, lastName, homeAddress, uni);
-    const res = await VerifyContract.verifyInstance.methods
-      .candidateHandler("1234", "monirul", "islam", "1234STREET", "1234UNI")
-      .call();
-    console.log("candidateHandler", res);
-    await VerifyContract.verifyInstance.methods
+    const resCandidate = await VerifyContract.verifyInstance.methods
+      .candidateHandler("1234", "monirul", "islam", "1234STREET", "1234UNI").sendToBlock({
+        from: store.state.dapp.account,
+        amount: new Big('0').toString()
+      })
+    console.log("candidateHandler success:", resCandidate.success);
+
+    const institutionHandler = await VerifyContract.verifyInstance.methods
       .institutionHandler(
         "Columbia University",
         "1234",
@@ -40,10 +43,16 @@ export default {
         "Computer Science",
         "2020"
       )
-      .call();
+      .sendToBlock({
+        from: store.state.dapp.account,
+        amount: new Big('0').toString()
+      })
+      console.log("institutionHandler success:", institutionHandler.success);
+
     const result = await VerifyContract.verifyInstance.methods
       .employerHandler("1234")
       .call();
-    console.log(result['ssn']);
+
+    console.log("employer returns: ", result);
   },
 };
