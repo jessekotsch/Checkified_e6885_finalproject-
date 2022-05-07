@@ -1,8 +1,8 @@
 import VerifyContract from "../contract";
 
-import store from '../store'
+import store from "../store";
 
-import Big from 'bignumber.js'
+import Big from "bignumber.js";
 
 export default {
   // async getName() {
@@ -29,10 +29,11 @@ export default {
   async candidateHandler(ssn, firstName, lastName, homeAddress, uni) {
     console.log("heree", ssn, firstName, lastName, homeAddress, uni);
     const resCandidate = await VerifyContract.verifyInstance.methods
-      .candidateHandler("1234", "monirul", "islam", "1234STREET", "1234UNI").sendToBlock({
+      .candidateHandler("1234", "monirul", "islam", "1234STREET", "1234UNI")
+      .sendToBlock({
         from: store.state.dapp.account,
-        amount: new Big('0').toString()
-      })
+        amount: new Big("0").toString(),
+      });
     console.log("candidateHandler success:", resCandidate.success);
 
     const institutionHandler = await VerifyContract.verifyInstance.methods
@@ -45,9 +46,9 @@ export default {
       )
       .sendToBlock({
         from: store.state.dapp.account,
-        amount: new Big('0').toString()
-      })
-      console.log("institutionHandler success:", institutionHandler.success);
+        amount: new Big("0").toString(),
+      });
+    console.log("institutionHandler success:", institutionHandler.success);
 
     const result = await VerifyContract.verifyInstance.methods
       .employerHandler("1234")

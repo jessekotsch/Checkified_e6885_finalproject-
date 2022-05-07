@@ -1,21 +1,37 @@
 <template>
-  <div>
-    <HelloWorld />
-    <Verification />
+  <div class="demo">
+    <button
+       v-for="tab in tabs"
+       :key="tab"
+       :class="['tab-button', { active: currentTab === tab }]"
+       @click="currentTab = tab"
+     >
+      {{ tab }}
+    </button>
+    <component :is="currentTab" class="tab"></component>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import Verification from "./components/Verification.vue";
+import candidateHandler from "./components/candidateHandler.vue";
+import institutionHandler from "./components/institutionHandler.vue";
+import employerHandler from "./components/employerHandler.vue";
 
 import { mapGetters } from "vuex";
+
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    Verification,
+    candidateHandler,
+    institutionHandler,
+    employerHandler,
+  },
+  data() {
+    return {
+      currentTab: 'candidateHandler',
+      tabs: ['candidateHandler', 'institutionHandler', 'employerHandler']
+    }
   },
   computed: {
     ...mapGetters(["usingAle"]),

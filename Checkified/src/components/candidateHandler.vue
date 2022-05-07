@@ -1,5 +1,5 @@
 <template>
-  <div class="verification">
+  <div class="candidateHandler">
     <p>
       Candidate Verification Form: Please fill out the form below to verify the
       certificate/degree of the candidate
@@ -22,11 +22,6 @@
         Submit
       </button>
     </p>
-    <h1 v-show="!Success">{{ "NOPE!" }}</h1>
-    <h1 v-show="Success">{{ "YUP!" }}</h1>
-    <p>--------------------------------------------------------------------</p>
-    <p>Candidate Verification Search: Enter the name</p>
-    <p>--------------------------------------------------------------------</p>
   </div>
 </template>
 
