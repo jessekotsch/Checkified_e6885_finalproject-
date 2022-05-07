@@ -1,203 +1,203 @@
 [
-   {
-     "inputs": [],
-     "stateMutability": "nonpayable",
-     "type": "constructor"
-   },
-   {
-     "inputs": [
-       {
-         "internalType": "string",
-         "name": "ssn",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "firstName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "lastName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "homeAddress",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "uni",
-         "type": "string"
-       }
-     ],
-     "name": "candidateHandler",
-     "outputs": [],
-     "stateMutability": "nonpayable",
-     "type": "function"
-   },
-   {
-     "inputs": [
-       {
-         "internalType": "string",
-         "name": "ssn",
-         "type": "string"
-       }
-     ],
-     "name": "employerHandler",
-     "outputs": [
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-   },
-   {
-     "inputs": [
-       {
-         "internalType": "string",
-         "name": "university",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "ssn",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "degreeName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "major",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "year",
-         "type": "string"
-       }
-     ],
-     "name": "institutionHandler",
-     "outputs": [],
-     "stateMutability": "nonpayable",
-     "type": "function"
-   },
-   {
-     "inputs": [],
-     "name": "manager",
-     "outputs": [
-       {
-         "internalType": "address",
-         "name": "",
-         "type": "address"
-       }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-   },
-   {
-     "inputs": [
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       }
-     ],
-     "name": "storeCandidateDegreeInfo",
-     "outputs": [
-       {
-         "internalType": "string",
-         "name": "university",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "degreeName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "major",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "year",
-         "type": "string"
-       }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-   },
-   {
-     "inputs": [
-       {
-         "internalType": "string",
-         "name": "",
-         "type": "string"
-       }
-     ],
-     "name": "storeCandidateInfo",
-     "outputs": [
-       {
-         "internalType": "string",
-         "name": "ssn",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "firstName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "lastName",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "homeAddress",
-         "type": "string"
-       },
-       {
-         "internalType": "string",
-         "name": "uni",
-         "type": "string"
-       }
-     ],
-     "stateMutability": "view",
-     "type": "function"
-   }
- ]
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "ssn",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "firstName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "lastName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "homeAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "uni",
+        "type": "string"
+      }
+    ],
+    "name": "candidateHandler",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "ssn",
+        "type": "string"
+      }
+    ],
+    "name": "employerHandler",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "university",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "ssn",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "degreeName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "major",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "year",
+        "type": "string"
+      }
+    ],
+    "name": "institutionHandler",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "manager",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "storeCandidateDegreeInfo",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "university",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "degreeName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "major",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "year",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "storeCandidateInfo",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "ssn",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "firstName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "lastName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "homeAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "uni",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
