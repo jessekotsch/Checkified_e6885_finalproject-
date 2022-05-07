@@ -1,146 +1,203 @@
 [
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "manager",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "int256"
-      },
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "storeCandidateDegreeInfo",
-    "outputs": [
-      {
-        "name": "university",
-        "type": "string"
-      },
-      {
-        "name": "degreeName",
-        "type": "string"
-      },
-      {
-        "name": "major",
-        "type": "string"
-      },
-      {
-        "name": "year",
-        "type": "int256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "ssn",
-        "type": "int256"
-      },
-      {
-        "name": "firstName",
-        "type": "string"
-      },
-      {
-        "name": "lastName",
-        "type": "string"
-      },
-      {
-        "name": "homeAddress",
-        "type": "string"
-      },
-      {
-        "name": "uni",
-        "type": "string"
-      }
-    ],
-    "name": "candidateHandler",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "int256"
-      }
-    ],
-    "name": "storeCandidateInfo",
-    "outputs": [
-      {
-        "name": "ssn",
-        "type": "int256"
-      },
-      {
-        "name": "firstName",
-        "type": "string"
-      },
-      {
-        "name": "lastName",
-        "type": "string"
-      },
-      {
-        "name": "homeAddress",
-        "type": "string"
-      },
-      {
-        "name": "uni",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "university",
-        "type": "string"
-      },
-      {
-        "name": "ssn",
-        "type": "int256"
-      },
-      {
-        "name": "degreeName",
-        "type": "string"
-      },
-      {
-        "name": "major",
-        "type": "string"
-      },
-      {
-        "name": "year",
-        "type": "int256"
-      }
-    ],
-    "name": "institutionHandler",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
+   {
+     "inputs": [],
+     "stateMutability": "nonpayable",
+     "type": "constructor"
+   },
+   {
+     "inputs": [
+       {
+         "internalType": "string",
+         "name": "ssn",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "firstName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "lastName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "homeAddress",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "uni",
+         "type": "string"
+       }
+     ],
+     "name": "candidateHandler",
+     "outputs": [],
+     "stateMutability": "nonpayable",
+     "type": "function"
+   },
+   {
+     "inputs": [
+       {
+         "internalType": "string",
+         "name": "ssn",
+         "type": "string"
+       }
+     ],
+     "name": "employerHandler",
+     "outputs": [
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+   },
+   {
+     "inputs": [
+       {
+         "internalType": "string",
+         "name": "university",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "ssn",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "degreeName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "major",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "year",
+         "type": "string"
+       }
+     ],
+     "name": "institutionHandler",
+     "outputs": [],
+     "stateMutability": "nonpayable",
+     "type": "function"
+   },
+   {
+     "inputs": [],
+     "name": "manager",
+     "outputs": [
+       {
+         "internalType": "address",
+         "name": "",
+         "type": "address"
+       }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+   },
+   {
+     "inputs": [
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       }
+     ],
+     "name": "storeCandidateDegreeInfo",
+     "outputs": [
+       {
+         "internalType": "string",
+         "name": "university",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "degreeName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "major",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "year",
+         "type": "string"
+       }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+   },
+   {
+     "inputs": [
+       {
+         "internalType": "string",
+         "name": "",
+         "type": "string"
+       }
+     ],
+     "name": "storeCandidateInfo",
+     "outputs": [
+       {
+         "internalType": "string",
+         "name": "ssn",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "firstName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "lastName",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "homeAddress",
+         "type": "string"
+       },
+       {
+         "internalType": "string",
+         "name": "uni",
+         "type": "string"
+       }
+     ],
+     "stateMutability": "view",
+     "type": "function"
+   }
+ ]

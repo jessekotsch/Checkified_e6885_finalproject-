@@ -9,7 +9,7 @@ McpFunc.Contract.setProvider("http://18.182.45.18:8765");
 
 const tokenAddress = "0x56f12EC4980d7bbD0470BEb3E713e61a33a1141C";
 const coreAddress = "0x56f12EC4980d7bbD0470BEb3E713e61a33a1141C";
-const verifyAddress = "0x761c19f3DC5409585C6443b607C6599c3a35F378";
+const verifyAddress = "0x789954166f927359f8788201794c8F51A0Ea1E54"; // VERIFICATION CONTRACT
 
 const Instance = new McpFunc.Contract(abi, tokenAddress);
 
