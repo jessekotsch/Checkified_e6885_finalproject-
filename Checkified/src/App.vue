@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HelloWorld/>
-    <Verification/>
+    <HelloWorld />
+    <Verification />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   name: "App",
   components: {
     HelloWorld,
-    Verification 
+    Verification,
   },
   computed: {
     ...mapGetters(["usingAle"]),

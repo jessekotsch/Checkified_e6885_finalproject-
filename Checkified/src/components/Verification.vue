@@ -64,13 +64,7 @@ export default {
       window["aleereum"] && window["aleereum"].connect();
     },
     verifyCandidate(ssn, firstName, lastName, homeAddress, uni) {
-      services.candidateHandler(
-        parseInt(ssn),
-        firstName,
-        lastName,
-        homeAddress,
-        uni
-      );
+      services.candidateHandler(ssn, firstName, lastName, homeAddress, uni);
     },
   },
 };

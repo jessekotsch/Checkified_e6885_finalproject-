@@ -9,7 +9,6 @@
 </template>
 
 <script>
-
 import services from "@/api";
 
 export default {
@@ -34,7 +33,7 @@ export default {
       window["aleereum"] && window["aleereum"].connect();
     },
     approveMoney() {
-      services.getName().then(res => {
+      services.getName().then((res) => {
         console.log(res);
       });
       services.approve(100).then((res) => {
