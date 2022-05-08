@@ -1,19 +1,16 @@
 <template>
   <div class="employerHandler">
     <p>
-      Employer Verification Form: Please enter the social security number of 
-      the candidate to lookup their information
+      Employer Verification Form: Please enter the social security number of the
+      candidate to lookup their information
     </p>
     <p>--------------------------------------------------------------------</p>
     <p>Social Security Number: {{ ssn }}</p>
     <input v-model="ssn" placeholder="Enter Social Security Number" />
     <p>
-      <button
-        @click="verifyCandidate(ssn, firstName, lastName, homeAddress, uni)"
-      >
-        Submit
-      </button>
+      <button @click="employerHandler(ssn)">Submit</button>
     </p>
+    <p> {{employerHandler(ssn)}} </p>
   </div>
 </template>
 
@@ -24,23 +21,17 @@ export default {
   data() {
     return {
       ssn: "",
-      firstName: "",
-      lastName: "",
-      homeAddress: "",
-      uni: "",
       isConnected: false,
       Success: false,
+      res: "",
     };
   },
   watch: {
     "$store.state.dapp": {
       handler(val) {
-        (this.ssn = val.ssn),
-          (this.firstName = val.firstName),
-          (this.lastName = val.lastName),
-          (this.homeAddress = val.homeAddress),
-          (this.uni = val.uni),
-          (this.isConnected = val.isConnected);
+        (this.ssn = val.ssn), 
+        (this.isConnected = val.isConnected);
+        (this.res = val.res)
       },
       immediate: true,
       deep: true,
@@ -50,8 +41,11 @@ export default {
     connect() {
       window["aleereum"] && window["aleereum"].connect();
     },
-    verifyCandidate(ssn, firstName, lastName, homeAddress, uni) {
-      services.candidateHandler(ssn, firstName, lastName, homeAddress, uni);
+    employerHandler(ssn) {
+      services.employerHandler(ssn).then((res) => {
+        console.log("JESSE", res);
+        return res
+      });
     },
   },
 };

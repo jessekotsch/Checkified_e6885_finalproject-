@@ -1,8 +1,8 @@
 <template>
   <div class="institutionHandler">
     <p>
-      Institution Verification Form: Please fill out the form below to verify the
-      certificate/degree of the candidate
+      Institution Verification Form: Please fill out the form below to verify
+      the certificate/degree of the candidate
     </p>
     <p>--------------------------------------------------------------------</p>
     <p>University: {{ uni }}</p>
@@ -16,9 +16,7 @@
     <p>Year: {{ year }}</p>
     <input v-model="year" placeholder="Enter Year" />
     <p>
-      <button
-        @click="verifyCandidate(ssn, firstName, lastName, homeAddress, uni)"
-      >
+      <button @click="institutionHandler(uni, ssn, degreeName, major, year)">
         Submit
       </button>
     </p>
@@ -32,9 +30,9 @@ export default {
   data() {
     return {
       ssn: "",
-      firstName: "",
-      lastName: "",
-      homeAddress: "",
+      degreeName: "",
+      major: "",
+      year: "",
       uni: "",
       isConnected: false,
       Success: false,
@@ -44,9 +42,9 @@ export default {
     "$store.state.dapp": {
       handler(val) {
         (this.ssn = val.ssn),
-          (this.firstName = val.firstName),
-          (this.lastName = val.lastName),
-          (this.homeAddress = val.homeAddress),
+          (this.degreeName = val.degreeName),
+          (this.major = val.major),
+          (this.year = val.year),
           (this.uni = val.uni),
           (this.isConnected = val.isConnected);
       },
@@ -58,8 +56,8 @@ export default {
     connect() {
       window["aleereum"] && window["aleereum"].connect();
     },
-    verifyCandidate(ssn, firstName, lastName, homeAddress, uni) {
-      services.candidateHandler(ssn, firstName, lastName, homeAddress, uni);
+    institutionHandler(uni, ssn, degreeName, major, year) {
+      services.institutionHandler(uni, ssn, degreeName, major, year);
     },
   },
 };

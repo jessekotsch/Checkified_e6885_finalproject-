@@ -1,11 +1,11 @@
 <template>
   <div class="demo">
     <button
-       v-for="tab in tabs"
-       :key="tab"
-       :class="['tab-button', { active: currentTab === tab }]"
-       @click="currentTab = tab"
-     >
+      v-for="tab in tabs"
+      :key="tab"
+      :class="['tab-button', { active: currentTab === tab }]"
+      @click="currentTab = tab"
+    >
       {{ tab }}
     </button>
     <component :is="currentTab" class="tab"></component>
@@ -19,7 +19,6 @@ import employerHandler from "./components/employerHandler.vue";
 
 import { mapGetters } from "vuex";
 
-
 export default {
   name: "App",
   components: {
@@ -29,9 +28,9 @@ export default {
   },
   data() {
     return {
-      currentTab: 'candidateHandler',
-      tabs: ['candidateHandler', 'institutionHandler', 'employerHandler']
-    }
+      currentTab: "candidateHandler",
+      tabs: ["candidateHandler", "institutionHandler", "employerHandler"],
+    };
   },
   computed: {
     ...mapGetters(["usingAle"]),
