@@ -18,13 +18,7 @@ export default {
   async institutionHandler(uni, ssn, degreeName, major, year) {
     console.log("heree2", uni, ssn, degreeName, major, year);
     const institutionHandler = await VerifyContract.verifyInstance.methods
-      .institutionHandler(
-        "Columbia University",
-        "1234",
-        "Bachelor of Science",
-        "Computer Science",
-        "2020"
-      )
+      .institutionHandler(uni, ssn, degreeName, major, year)
       .sendToBlock({
         from: store.state.dapp.account,
         amount: new Big("0").toString(),
