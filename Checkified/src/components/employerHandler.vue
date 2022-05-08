@@ -10,7 +10,7 @@
     <p>
       <button @click="employerHandler(ssn)">Submit</button>
     </p>
-    <p> {{employerHandler(ssn)}} </p>
+    <p>{{ res }}</p>
   </div>
 </template>
 
@@ -29,9 +29,8 @@ export default {
   watch: {
     "$store.state.dapp": {
       handler(val) {
-        (this.ssn = val.ssn), 
-        (this.isConnected = val.isConnected);
-        (this.res = val.res)
+        (this.ssn = val.ssn), (this.isConnected = val.isConnected);
+        this.res = val.res;
       },
       immediate: true,
       deep: true,
@@ -42,9 +41,9 @@ export default {
       window["aleereum"] && window["aleereum"].connect();
     },
     employerHandler(ssn) {
+      let self = this;
       services.employerHandler(ssn).then((res) => {
-        console.log("JESSE", res);
-        return res
+        self.res = res;
       });
     },
   },
