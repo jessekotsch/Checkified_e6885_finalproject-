@@ -1,5 +1,6 @@
 <template>
-  <div class="institutionHandler">
+  <div class="Institution">
+    <img src="../assets/CheckifiedLogo.png" />
     <p>
       Institution Verification Form: Please fill out the form below to verify
       the certificate/degree of the candidate

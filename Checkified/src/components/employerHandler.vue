@@ -1,5 +1,6 @@
 <template>
-  <div class="employerHandler">
+  <div class="Employer">
+    <img src="../assets/CheckifiedLogo.png" />
     <p>
       Employer Verification Form: Please enter the social security number of the
       candidate to lookup their information

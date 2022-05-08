@@ -1,8 +1,9 @@
 <template>
-  <div class="candidateHandler">
+  <div class="Candidate">
+    <img src="../assets/CheckifiedLogo.png" />
     <p>
-      Candidate Verification Form: Please fill out the form below to verify the
-      certificate/degree of the candidate
+      Candidate Verification Form: Please fill out the form below. <br> Degrees/Certificates
+      can be verified by institutions after you have filled out this form. 
     </p>
     <p>--------------------------------------------------------------------</p>
     <p>Social Security Number: {{ ssn }}</p>

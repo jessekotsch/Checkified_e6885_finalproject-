@@ -1,5 +1,6 @@
 <template>
   <div class="demo">
+    <b>I am a(n): </b>
     <button
       v-for="tab in tabs"
       :key="tab"
@@ -13,23 +14,23 @@
 </template>
 
 <script>
-import candidateHandler from "./components/candidateHandler.vue";
-import institutionHandler from "./components/institutionHandler.vue";
-import employerHandler from "./components/employerHandler.vue";
+import Candidate from "./components/candidateHandler.vue";
+import Institution from "./components/institutionHandler.vue";
+import Employer from "./components/employerHandler.vue";
 
 import { mapGetters } from "vuex";
 
 export default {
   name: "App",
   components: {
-    candidateHandler,
-    institutionHandler,
-    employerHandler,
+    Candidate,
+    Institution,
+    Employer,
   },
   data() {
     return {
-      currentTab: "candidateHandler",
-      tabs: ["candidateHandler", "institutionHandler", "employerHandler"],
+      currentTab: "Candidate",
+      tabs: ["Candidate", "Institution", "Employer"],
     };
   },
   computed: {
@@ -71,7 +72,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0a0d11;
+  background-color: rgb(94, 117, 139);
   margin-top: 60px;
 }
 </style>
