@@ -1,27 +1,48 @@
 <template>
-  <div class="Institution">
-    <img src="../assets/CheckifiedLogo.png" />
+  <form class="Institution">
+    <img id="bg" src="../assets/CheckifiedLogo.png" />
     <p>
       Institution Verification Form: Please fill out the form below to verify
       the certificate/degree of the candidate
     </p>
     <p>--------------------------------------------------------------------</p>
-    <p>University: {{ uni }}</p>
-    <input v-model="uni" placeholder="Enter University" />
-    <p>Social Security Number: {{ ssn }}</p>
-    <input v-model="ssn" placeholder="Enter Social Security Number" />
-    <p>Degree Name: {{ degreeName }}</p>
-    <input v-model="degreeName" placeholder="Enter Degree Name" />
-    <p>Major: {{ major }}</p>
-    <input v-model="major" placeholder="Enter Major" />
-    <p>Year: {{ year }}</p>
-    <input v-model="year" placeholder="Enter Year" />
-    <p>
-      <button @click="institutionHandler(uni, ssn, degreeName, major, year)">
-        Submit
-      </button>
-    </p>
-  </div>
+
+    <div v-if="showForm">
+      <p>University: {{ uni }}</p>
+      <input v-model="uni" placeholder="Enter University" />
+      <p>Social Security Number: {{ ssn }}</p>
+      <input v-model="ssn" placeholder="Enter Social Security Number" />
+      <p>Degree Name: {{ degreeName }}</p>
+      <input v-model="degreeName" placeholder="Enter Degree Name" />
+      <p>Major: {{ major }}</p>
+      <input v-model="major" placeholder="Enter Major" />
+      <p>Year: {{ year }}</p>
+      <input v-model="year" placeholder="Enter Year" />
+      <p>GPA: {{ gpa }}</p>
+      <input v-model="gpa" placeholder="Enter GPA" />
+      <p>
+        <br />
+        <button
+          type="button"
+          class="btn btn-primary"
+          @click="institutionHandler(uni, ssn, degreeName, major, year, gpa)"
+        >
+          Submit
+        </button>
+      </p>
+    </div>
+
+    <div v-if="!showForm">
+      <p>
+        <strong>
+          Please authorize this submission via Ale Wallet extension to store the
+          record successfully.
+        </strong>
+      </p>
+      <br />
+      <br />
+    </div>
+  </form>
 </template>
 
 <script>
@@ -35,8 +56,10 @@ export default {
       major: "",
       year: "",
       uni: "",
+      gpa: "",
       isConnected: false,
       Success: false,
+      showForm: true,
     };
   },
   watch: {
@@ -47,6 +70,7 @@ export default {
           (this.major = val.major),
           (this.year = val.year),
           (this.uni = val.uni),
+          (this.gpa = val.gpa),
           (this.isConnected = val.isConnected);
       },
       immediate: true,
@@ -57,8 +81,9 @@ export default {
     connect() {
       window["aleereum"] && window["aleereum"].connect();
     },
-    institutionHandler(uni, ssn, degreeName, major, year) {
-      services.institutionHandler(uni, ssn, degreeName, major, year);
+    institutionHandler(uni, ssn, degreeName, major, year, gpa) {
+      services.institutionHandler(uni, ssn, degreeName, major, year, gpa);
+      this.showForm = false;
     },
   },
 };
@@ -82,5 +107,10 @@ li {
 }
 a {
   color: #42b983;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>

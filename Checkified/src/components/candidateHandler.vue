@@ -1,28 +1,46 @@
 <template>
   <div class="Candidate">
-    <img src="../assets/CheckifiedLogo.png" />
+    <img id="bg" src="../assets/CheckifiedLogo.png" />
     <p>
-      Candidate Verification Form: Please fill out the form below. <br> Degrees/Certificates
-      can be verified by institutions after you have filled out this form. 
+      Candidate Verification Form: Please fill out the form below. <br />
+      Degrees/Certificates can be verified by institutions after you have filled
+      out this form.
     </p>
     <p>--------------------------------------------------------------------</p>
-    <p>Social Security Number: {{ ssn }}</p>
-    <input v-model="ssn" placeholder="Enter Social Security Number" />
-    <p>First Name: {{ firstName }}</p>
-    <input v-model="firstName" placeholder="Enter First Name" />
-    <p>Last Name: {{ lastName }}</p>
-    <input v-model="lastName" placeholder="Enter Last Name" />
-    <p>Home Address: {{ homeAddress }}</p>
-    <input v-model="homeAddress" placeholder="Enter Home Address" />
-    <p>University: {{ uni }}</p>
-    <input v-model="uni" placeholder="Enter University" />
-    <p>
-      <button
-        @click="verifyCandidate(ssn, firstName, lastName, homeAddress, uni)"
-      >
-        Submit
-      </button>
-    </p>
+
+    <div v-if="showForm">
+      <p>Social Security Number: {{ ssn }}</p>
+      <input v-model="ssn" placeholder="Enter Social Security Number" />
+      <p>First Name: {{ firstName }}</p>
+      <input v-model="firstName" placeholder="Enter First Name" />
+      <p>Last Name: {{ lastName }}</p>
+      <input v-model="lastName" placeholder="Enter Last Name" />
+      <p>Home Address: {{ homeAddress }}</p>
+      <input v-model="homeAddress" placeholder="Enter Home Address" />
+      <p>University: {{ uni }}</p>
+      <input v-model="uni" placeholder="Enter University" />
+      <p>
+        <br />
+        <button
+          type="button"
+          class="btn btn-primary"
+          @click="verifyCandidate(ssn, firstName, lastName, homeAddress, uni)"
+        >
+          Submit
+        </button>
+      </p>
+    </div>
+
+    <div v-if="!showForm">
+      <p>
+        <strong>
+          Please authorize this submission via Ale Wallet extension to store the
+          record successfully.
+        </strong>
+      </p>
+      <br />
+      <br />
+    </div>
   </div>
 </template>
 
@@ -39,6 +57,7 @@ export default {
       uni: "",
       isConnected: false,
       Success: false,
+      showForm: true,
     };
   },
   watch: {
@@ -61,6 +80,7 @@ export default {
     },
     verifyCandidate(ssn, firstName, lastName, homeAddress, uni) {
       services.candidateHandler(ssn, firstName, lastName, homeAddress, uni);
+      this.showForm = false;
     },
   },
 };
@@ -84,5 +104,10 @@ li {
 }
 a {
   color: #42b983;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>

@@ -15,10 +15,10 @@ export default {
       });
     console.log("candidateHandler success:", resCandidate.success);
   },
-  async institutionHandler(uni, ssn, degreeName, major, year) {
-    console.log("heree2", uni, ssn, degreeName, major, year);
+  async institutionHandler(uni, ssn, degreeName, major, year, gpa) {
+    console.log("heree2", uni, ssn, degreeName, major, year, gpa);
     const institutionHandler = await VerifyContract.verifyInstance.methods
-      .institutionHandler(uni, ssn, degreeName, major, year)
+      .institutionHandler(uni, ssn, degreeName, major, year, gpa)
       .sendToBlock({
         from: store.state.dapp.account,
         amount: new Big("0").toString(),

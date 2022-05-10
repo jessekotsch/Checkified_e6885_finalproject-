@@ -33,13 +33,7 @@
       }
     ],
     "name": "candidateHandler",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -53,6 +47,11 @@
     ],
     "name": "employerHandler",
     "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
       {
         "internalType": "string",
         "name": "",
@@ -112,6 +111,11 @@
       {
         "internalType": "string",
         "name": "year",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "gpa",
         "type": "string"
       }
     ],
@@ -161,6 +165,11 @@
       {
         "internalType": "string",
         "name": "year",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "gpa",
         "type": "string"
       }
     ],
