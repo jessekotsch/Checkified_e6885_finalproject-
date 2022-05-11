@@ -11,13 +11,23 @@
       <p>University: {{ uni }}</p>
       <input v-model="uni" placeholder="Enter University" />
       <p>Social Security Number: {{ ssn }}</p>
-      <input v-model="ssn" placeholder="Enter Social Security Number" />
+      <input
+        v-model="ssn"
+        placeholder="Enter Last 4 of SSN"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        maxlength="4"
+      />
       <p>Degree Name: {{ degreeName }}</p>
       <input v-model="degreeName" placeholder="Enter Degree Name" />
       <p>Major: {{ major }}</p>
       <input v-model="major" placeholder="Enter Major" />
       <p>Year: {{ year }}</p>
-      <input v-model="year" placeholder="Enter Year" />
+      <input
+        v-model="year"
+        placeholder="Enter Year"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        maxlength="4"
+      />
       <p>GPA: {{ gpa }}</p>
       <input v-model="gpa" placeholder="Enter GPA" />
       <p>

@@ -10,7 +10,12 @@
 
     <div v-if="showForm">
       <p>Social Security Number: {{ ssn }}</p>
-      <input v-model="ssn" placeholder="Enter Social Security Number" />
+      <input
+        v-model="ssn"
+        placeholder="Enter Last 4 of SSN"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        maxlength="4"
+      />
       <p>First Name: {{ firstName }}</p>
       <input v-model="firstName" placeholder="Enter First Name" />
       <p>Last Name: {{ lastName }}</p>
