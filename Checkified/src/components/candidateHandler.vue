@@ -40,9 +40,15 @@
       <p>
         <strong>
           Please authorize this submission via Ale Wallet extension to store the
-          record successfully.
+          record successfully. <br /> If any of the fields below are blank, your entry will 
+          not be saved. 
         </strong>
       </p>
+      <p><strong>SSN:</strong> {{ ssn }}</p>
+      <p><strong>First Name:</strong> {{ firstName }}</p>
+      <p><strong>Last Name:</strong> {{ lastName }}</p>
+      <p><strong>Home Address:</strong> {{ homeAddress }}</p>
+      <p><strong>University:</strong> {{ uni }}</p>
       <br />
       <br />
     </div>

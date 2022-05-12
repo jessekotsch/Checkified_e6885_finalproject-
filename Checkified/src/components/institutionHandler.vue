@@ -46,9 +46,16 @@
       <p>
         <strong>
           Please authorize this submission via Ale Wallet extension to store the
-          record successfully.
+          record successfully. <br /> If any of the fields below are blank, your entry will 
+          not be saved.
         </strong>
       </p>
+      <p><strong>University:</strong> {{ uni }}</p>
+      <p><strong>SSN:</strong> {{ ssn }}</p>
+      <p><strong>Degree Name:</strong> {{ degreeName }}</p>
+      <p><strong>Major:</strong> {{ major }}</p>
+      <p><strong>Graduation Year:</strong> {{ year }}</p>     
+      <p><strong>GPA:</strong> {{ gpa }}</p>
       <br />
       <br />
     </div>
